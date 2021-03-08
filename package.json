@@ -1,7 +1,7 @@
 {
-  "name": "js-tdd",
+  "name": "spotify-wrapper",
   "version": "1.0.0",
-  "description": "lib JS com TDD na prática",
+  "description": "A wrapper to work with the Spotify Web API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/felipepxavier/js-tdd/issues"
   },
-  "homepage": "https://github.com/felipepxavier/js-tdd#readme"
+  "homepage": "https://github.com/felipepxavier/js-tdd#readme",
+  "devDependencies": {
+    "chai": "^4.3.3",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^5.1.3",
+    "mocha": "^8.3.1"
+  },
+  "dependencies": {}
 }
