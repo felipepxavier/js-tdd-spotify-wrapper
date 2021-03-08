@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felipepxavier/js-tdd.git"
+    "url": "git+https://github.com/felipepxavier/spotify-wrapper.git"
   },
   "keywords": [
     "js",
@@ -18,9 +18,9 @@
   "author": "Felipe Pedroso <felipe.sadler@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/felipepxavier/js-tdd/issues"
+    "url": "https://github.com/felipepxavier/spotify-wrapper/issues"
   },
-  "homepage": "https://github.com/felipepxavier/js-tdd#readme",
+  "homepage": "https://github.com/felipepxavier/spotify-wrapper#readme",
   "devDependencies": {
     "chai": "^4.3.3",
     "eslint": "^7.20.0",
