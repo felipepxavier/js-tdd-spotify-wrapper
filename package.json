@@ -2,16 +2,21 @@
   "name": "spotify-wrapper",
   "version": "1.0.0",
   "description": "A wrapper to work with the Spotify Web API",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "clear": "rimraf lib",
-    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
-    "build:watch": "npm run build -- --watch",
+    "create:lib": "./node_modules/.bin/babel --out-dir lib src",
+    "build": "npm run clear && npm run create:lib",
+    "build:watch": "npm run clear && npm run create:lib -- --watch",
+    "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.js --mode=development",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.min.js --mode=production",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register --watch",
     "test:coverage": "nyc npm test"
+
   },
   "repository": {
     "type": "git",
@@ -29,9 +34,11 @@
   },
   "homepage": "https://github.com/felipepxavier/spotify-wrapper#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/register": "^7.13.8",
+    "babel-loader": "^8.2.2",
     "chai": "^4.3.3",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -41,7 +48,9 @@
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "sinon": "^9.2.4",
-    "sinon-chai": "^3.5.0"
+    "sinon-chai": "^3.5.0",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
